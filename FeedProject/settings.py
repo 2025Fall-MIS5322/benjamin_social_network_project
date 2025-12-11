@@ -25,7 +25,12 @@ SECRET_KEY = 'django-insecure-m3zn-=tf0!p!l%zi)h4)2r)1m6sm&@ns@^3)1at#6e)yjmb__r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['benjamin-social-network-project.onrender.com']
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
+    'benjamin-social-network-project.onrender.com',
+]
+
 
 
 # Application definition
