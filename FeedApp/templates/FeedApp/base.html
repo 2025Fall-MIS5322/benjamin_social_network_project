@@ -1,7 +1,6 @@
 {% load bootstrap4 %}
 
 <!doctype html>
-
 <html lang="en">
 
 <head>
@@ -12,7 +11,6 @@
 
     {% bootstrap_css %}
     {% bootstrap_javascript jquery='full' %}
-
 </head>
 
 <body>
@@ -35,26 +33,21 @@
                     <a class="nav-link" href="{% url 'FeedApp:friends' %}">Friend Requests</a>
                 </li>
                 <li class="nav-item">
-                <li class="nav-item">
                     <a class="nav-link" href="{% url 'FeedApp:myfeed' %}">My Feed</a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'FeedApp:friendsfeed' %}">Friends Feed</a>
                 </li>
-
             </ul>
 
             <ul class="navbar-nav ml-auto">
                 {% if user.is_authenticated %}
-
                 <li class="nav-item">
                     <span class="navbar-text">Hello, {{ user.username }}.</span>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'users:logout' %}">Log out</a>
                 </li>
-
                 {% else %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'users:register' %}">Register</a>
@@ -65,7 +58,6 @@
                 {% endif %}
             </ul>
         </div>
-
     </nav>
 
     <main role="main" class="container">
@@ -78,9 +70,15 @@
         </div>
     </main>
 
+    <!-- Carousel auto-slide script -->
+    <script>
+        $(document).ready(function () {
+            $('#feedCarousel').carousel({
+                interval: 3000,  // 3 seconds per slide
+                pause: 'hover'   // stop when mouse is over it
+            });
+        });
+    </script>
 </body>
-
-
-
 
 </html>
